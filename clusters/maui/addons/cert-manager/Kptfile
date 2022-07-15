@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: cert-manager
+  annotations:
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: git@github.com:droot/kpt-packages
+    directory: /cert-manager-basic
+    ref: v0
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: git@github.com:droot/kpt-packages
+    directory: /cert-manager-basic
+    ref: cert-manager-basic/v0
+    commit: c8c2c5b1db884246280b465963d208b8308d60dd
+info:
+  description: CertManager Package (https://cert-manager.io)
