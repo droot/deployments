@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: ingress-nginx
+  annotations:
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: git@github.com:droot/kpt-packages
+    directory: /ingress-nginx
+    ref: v0
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: git@github.com:droot/kpt-packages
+    directory: /ingress-nginx
+    ref: ingress-nginx/v0
+    commit: ed3a09c6b8aa329817c63d5aa5e4ce9e2f0f3d70
+info:
+  description: sample description
