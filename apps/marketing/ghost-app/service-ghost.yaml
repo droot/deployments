@@ -8,9 +8,9 @@ metadata: # kpt-merge: example/ghost-app
   labels:
     app.kubernetes.io/name: ghost-app
 spec:
-  type: LoadBalancer
-  externalTrafficPolicy: Cluster
-  sessionAffinity: None
+  type: ClusterIP
+# externalTrafficPolicy: Cluster
+# sessionAffinity: None
   ports:
     - name: http
       port: 80
