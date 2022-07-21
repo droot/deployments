@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ghost-app
+  namespace: marketing
+spec:
+  rules:
+  - host: myblog.com
+    http:
+      paths:
+      - backend:
+          serviceName: ghost-app
+          servicePort: 80
+  - host: www.myblog.com
+    http:
+      paths:
+      - backend:
+          serviceName: ghost-app
+          servicePort: 80
