@@ -6,9 +6,11 @@ metadata: # kpt-merge: example/ghost-app
   namespace: marketing
   annotations:
     internal.kpt.dev/upstream-identifier: '|PersistentVolumeClaim|example|ghost-app'
+  labels:
+    app.kubernetes.io/name: ghost-app
 spec:
   accessModes:
-    - "ReadWriteOnce"
+    - ReadWriteOnce
   resources:
     requests:
-      storage: "8Gi"
+      storage: 8Gi

@@ -6,6 +6,8 @@ metadata: # kpt-merge: example/mariadb
   namespace: marketing
   annotations:
     internal.kpt.dev/upstream-identifier: '|Service|example|mariadb'
+  labels:
+    app.kubernetes.io/name: mariadb
 spec:
   type: ClusterIP
   sessionAffinity: None
@@ -15,3 +17,5 @@ spec:
       protocol: TCP
       targetPort: mysql
       nodePort: null
+  selector:
+    app.kubernetes.io/name: mariadb

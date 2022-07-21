@@ -9,15 +9,15 @@ upstream:
   git:
     repo: git@github.com:droot/kpt-packages
     directory: /ghost
-    ref: v1
+    ref: v2
   updateStrategy: resource-merge
 upstreamLock:
   type: git
   git:
     repo: git@github.com:droot/kpt-packages
     directory: /ghost
-    ref: ghost/v1
-    commit: fa351c1eef745a23505b53e151eb14ed9daf59a0
+    ref: ghost/v2
+    commit: a7953c1e920a5371cc432aaf76bf01bf059045b1
 info:
   description: sample description
 pipeline:

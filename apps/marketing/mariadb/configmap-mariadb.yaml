@@ -6,6 +6,8 @@ metadata: # kpt-merge: example/mariadb
   namespace: marketing
   annotations:
     internal.kpt.dev/upstream-identifier: '|ConfigMap|example|mariadb'
+  labels:
+    app.kubernetes.io/name: mariadb
 data:
   my.ini: |-
     [mysqld]

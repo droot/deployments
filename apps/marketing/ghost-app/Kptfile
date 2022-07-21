@@ -4,5 +4,11 @@ metadata:
   name: ghost-app
   annotations:
     config.kubernetes.io/local-config: "true"
+  labels:
+    app.kubernetes.io/name: ghost-app
 info:
   description: The Ghost App package contains the KRM resources for a Ghost Application.
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/set-labels:v0.1.5
+      configPath: setlabels.yaml
